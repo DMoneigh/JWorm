@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Enumeration;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.jar.JarEntry;
@@ -25,7 +24,7 @@ import org.objectweb.asm.util.CheckClassAdapter;
  *
  * @author Desmond Jackson
  */
-public class JavaArchive extends Object implements Iterable<ClassNode> {
+public class JavaArchive extends Object {
 
 	/**
 	 * The Jar file to represent.
@@ -169,8 +168,4 @@ public class JavaArchive extends Object implements Iterable<ClassNode> {
 		return jarFile.getName();
 	}
 
-	@Override
-	public Iterator<ClassNode> iterator() {
-		return classes.values().iterator();
-	}
 }
