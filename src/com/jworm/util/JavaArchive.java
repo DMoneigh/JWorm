@@ -145,7 +145,7 @@ public class JavaArchive extends Object {
 	}
 	
 	/**
-	 * Gets the main class as a Class Node.
+	 * Gets the main class as a class node.
 	 * 
 	 * @return null if the main class could not be found
 	 */
